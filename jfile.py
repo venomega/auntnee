@@ -18,12 +18,14 @@ def arrange_list():  # for export new dict with clean data
     d = retrive_data()
     z = {}
     for entry in d['db']['entries']:
-        if entry['type'] == 'totp':
+        if entry['type'] != 'totp':
             continue
         issuer = entry['issuer']
+        print(issuer)
         name = entry['name']
         secret = entry['info']['secret']
-        z[issuer:{'name': name, 'secret': secret}]
+        z[issuer] = {'name': name, 'secret': secret}
+    print(z)
     return z
 
 
