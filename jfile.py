@@ -9,7 +9,6 @@ db = {"version": 1, "entries": []}
 def retrive_data():  # get json config
     import json
     path = json.load(open("config.json"))['path']
-    print(path)
     return json.load(open(path))
 
 
@@ -21,11 +20,9 @@ def arrange_list():  # for export new dict with clean data
         if entry['type'] != 'totp':
             continue
         issuer = entry['issuer']
-        print(issuer)
         name = entry['name']
         secret = entry['info']['secret']
         z[issuer] = {'name': name, 'secret': secret}
-    print(z)
     return z
 
 
