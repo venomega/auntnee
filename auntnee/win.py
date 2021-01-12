@@ -71,7 +71,7 @@ class totp_win(window):
 class search_win(window):
     def __init__(self, x, y, w, h):
         super().__init__(x, y, w, h)
-        self.json = json.load(open(f"{sys.path[-1]}key.json"))
+        self.json = json.load(open(f"{sys.path[-1]}key.py"))
 
     def search(self, string):
         self.clean()
