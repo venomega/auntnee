@@ -10,6 +10,12 @@ db = {"version": 1, "entries": []}
 def retrive_data():  # get json config
     import json
     path = json.load(open(f"{sys.path[-1]}/config.json"))['path']
+    try:
+        open("path")
+    except:
+        import err
+        err.not_path()
+        exit(0)
     return json.load(open(path))
 
 
