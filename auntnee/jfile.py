@@ -1,3 +1,4 @@
+import sys
 # add encryptation missing
 
 # aegis json compatibility, missing output
@@ -8,7 +9,7 @@ db = {"version": 1, "entries": []}
 
 def retrive_data():  # get json config
     import json
-    path = json.load(open("config.json"))['path']
+    path = json.load(open(f"{sys.path[-1]}/config.json"))['path']
     return json.load(open(path))
 
 

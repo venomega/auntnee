@@ -1,5 +1,6 @@
 import curses
 import jfile
+import sys
 import json
 import pyotp as otp
 
@@ -70,7 +71,7 @@ class totp_win(window):
 class search_win(window):
     def __init__(self, x, y, w, h):
         super().__init__(x, y, w, h)
-        self.json = json.load(open("key.json"))
+        self.json = json.load(open(f"{sys.path[-1]}key.json"))
 
     def search(self, string):
         self.clean()
