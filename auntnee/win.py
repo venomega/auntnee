@@ -87,7 +87,7 @@ class search_win(window):
             key = self.win.getch()
             if key == 9:  # tab to exits
                 exit(0)
-            if key != 8:  # backspace on my laptop
+            if not key in [8,127]:  # backspace on my laptop
                 try:
                     buffer += self.json[str(key)]
                 except:
