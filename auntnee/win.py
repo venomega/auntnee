@@ -54,7 +54,7 @@ class totp_win(window):
         l = []
         count = 1
         for i in self.json.items():
-            if string in i[0]:
+            if string in i[0].lower():
                 l.append(i)
         for i in l:
             if count > (self.h - 2):
