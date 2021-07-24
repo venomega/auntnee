@@ -2,8 +2,8 @@ from distutils.core import setup
 
 setup(
     name='auntnee',
-    author="Guillermo Plasencia",
-    author_email="guilleps92@nauta.cu",
+    author="venomega",
+    author_email="usercryptonumberzero@gmail.com",
     version='0.1',
     packages=['auntnee', ],
     requires=["pyotp", "curses", ],
