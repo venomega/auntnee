@@ -52,5 +52,6 @@ def add():
         exit(1)
 
     data["db"]['entries'].append(json.dumps(d))
-    json.dump(data, open("/tmp/a.json",'w'))
+    path = json.load(open(f"{os.environ['HOME']}/.auntnee.conf"))['path']
+    json.dump(data, open(path,'w'))
     exit(0)
