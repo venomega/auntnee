@@ -2,7 +2,7 @@
 
 TODO:
   - support encrypted json
-  - support add new or del issuer
+  - support delete issuer
   - support export new json encrypted (Aegis compatible)
   - appimage release
   - design an ui
