@@ -48,10 +48,22 @@ def add():
         d['name'] = sys.argv[3]
         d['info']['secret'] = sys.argv[4]
     except:
-        print ("You must provide:\n --add <issuer> <name> <key>\n")
+        print("You must provide:\n --add <issuer> <name> <key>\n")
         exit(1)
 
     data["db"]['entries'].append(json.dumps(d))
     path = json.load(open(f"{os.environ['HOME']}/.auntnee.conf"))['path']
-    json.dump(data, open(path,'w'))
+    json.dump(data, open(path, 'w'))
     exit(0)
+
+
+def change():
+    data = json.load(open(f"{os.environ['HOME']}/.auntnee.conf"))
+    newpath = sys.argv[2]
+    try:
+        open(newpath).close()
+    except:
+        print("Error reading file")
+        exit(1)
+    data['path'] = newpath
+    json.dump(data, open(f"{os.environ['HOME']}/.auntnee.conf"))
