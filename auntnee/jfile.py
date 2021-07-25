@@ -1,6 +1,6 @@
 import sys
 import os
-import random
+import ssl
 import json
 # add encryptation missing
 
@@ -34,9 +34,8 @@ def get():  # macro for get list to mem
 
 
 def generate_uuid():
-    def r(x): return random.randbytes(x).hex()
+    def r(x): return ssl.RAND_bytes(x).hex()
     return f"{r(4)}-{r(2)}-{r(2)}-{r(2)}-{r(6)}"
-
 
 def add():
     data = retrive_data()
