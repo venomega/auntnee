@@ -2,13 +2,8 @@ import sys
 import os
 import ssl
 import json
+import template
 # add encryptation missing
-
-# aegis json compatibility, missing output
-version = 1
-header = {"slots": None, "params": None}
-db = {"version": 1, "entries": []}
-
 
 def retrive_data():  # get json config
     path = json.load(open(f"{os.environ['HOME']}/.auntnee.conf"))['path']
@@ -39,8 +34,8 @@ def generate_uuid():
 
 def add():
     data = retrive_data()
-    d = {'type': 'totp', 'uuid': '', 'name': '', 'issuer': '', 'icon': None,
-         'info': {'secret': '', 'algo': 'SHA1', 'digits': 6, 'period': 30}}
+    d = template.camp
+
     try:
         d['uuid'] = generate_uuid()
         d['issuer'] = sys.argv[2]
@@ -66,3 +61,8 @@ def change():
         exit(1)
     data['path'] = newpath
     json.dump(data, open(f"{os.environ['HOME']}/.auntnee.conf"))
+
+def empty(path):
+    json.dump(template.empty, open(path,'w'))
+    print (f"Empty json file created on {path}")
+    
