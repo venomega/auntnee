@@ -4,8 +4,8 @@ camp = {'type': 'totp', 'uuid': '', 'name': '', 'issuer': '', 'icon': None,
 empty = {
     "version": 1,
     "header": {
-        "slots": null,
-        "params": null
+        "slots": None,
+        "params": None
     },
     "db": {
         "version": 1,
