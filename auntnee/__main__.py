@@ -4,6 +4,7 @@ import help
 
 if "-h" in sys.argv or "--help" in sys.argv:
     help.help()
+    exit(0)
 if "-a" in sys.argv or "--add" in sys.argv:
     import jfile
     jfile.add()
