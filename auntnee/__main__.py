@@ -9,6 +9,9 @@ if "-a" in sys.argv or "--add" in sys.argv:
     import jfile
     jfile.add()
     exit(0)
+if "-c" in sys.argv or "--change" in sys.argv:
+    jfile.change()
+    exit(0)
 
 try:
     import pyotp
