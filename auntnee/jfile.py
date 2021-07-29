@@ -45,7 +45,7 @@ def add():
         print("You must provide:\n --add <issuer> <name> <key>\n")
         exit(1)
 
-    data["db"]['entries'].append(json.dumps(d))
+    data["db"]['entries'].append(eval(f"{d}"))
     path = json.load(open(f"{os.environ['HOME']}/.auntnee.conf"))['path']
     json.dump(data, open(path, 'w'))
     exit(0)
@@ -65,4 +65,4 @@ def change():
 def empty(path):
     json.dump(template.empty, open(path,'w'))
     print (f"Empty json file created on {path}")
-    
+
