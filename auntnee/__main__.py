@@ -1,12 +1,12 @@
 import sys
 import help
+import jfile
 
 
 if "-h" in sys.argv or "--help" in sys.argv:
     help.help()
     exit(0)
 if "-a" in sys.argv or "--add" in sys.argv:
-    import jfile
     jfile.add()
     exit(0)
 if "-c" in sys.argv or "--change" in sys.argv:
