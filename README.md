@@ -100,6 +100,26 @@ If you want to delete an entry just provide the issuer(or website name like mywe
  $>
 ```
 
+And then...
+
+```
+
+   ┌─<SEARCH>───────────────────┐
+   │myw                         │
+   └────────────────────────────┘
+
+   ┌──<Result>──────────────────┐
+   │                            │
+   │                            │
+   │                            │
+   │                            │
+   │                            │
+   │                            │
+   │                            │
+   └────────────────────────────┘
+```
+
+The issuer has been removed.
 
 ## Help
 
