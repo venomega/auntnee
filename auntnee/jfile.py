@@ -65,11 +65,16 @@ def change():
 def delete():
     data = retrive_data()
     count = 0
+    to_delete = []
+    # this have to be apart because if remove entries inside the for loop, when the list changes, the for loop breaks
     for element in data['db']['entries']:
       if element['issuer'] == sys.argv[-1]:
         count += 1
-        data['db']['entries'].remove(element)
+        to_delete.append(element)
+    [data['db']['entries'].remove(element) for element in to_delete]
     print (f" {count} entries removed ")
+    path = json.load(open(f"{os.environ['HOME']}/.auntnee.conf"))['path']
+    json.dump(data, open(path,"w"))
 
 def empty(path):
     json.dump(template.empty, open(path,'w'))
