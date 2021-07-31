@@ -62,6 +62,15 @@ def change():
     data['path'] = newpath
     json.dump(data, open(f"{os.environ['HOME']}/.auntnee.conf"))
 
+def delete():
+    data = retrive_data()
+    count = 0
+    for element in data['db']['entries']:
+      if element['issuer'] == sys.argv[-1]:
+        count += 1
+        data['db']['entries'].remove(element)
+    print (f" {count} entries removed ")
+
 def empty(path):
     json.dump(template.empty, open(path,'w'))
     print (f"Empty json file created on {path}")
