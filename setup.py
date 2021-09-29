@@ -10,7 +10,5 @@ setup(
     licence='GPL-3',
     url="https://github.com/venomega/auntnee",
     download_url="https://github.com/venomega/auntnee/archive/0.2.tar.gz",
-    description="This is an TOTP Authenticator CLI for the terminal",
-    long_description=open("README.md").read(),
-
+    description="This is an TOTP Authenticator CLI for the terminal"
 )
