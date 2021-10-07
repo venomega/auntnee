@@ -6,6 +6,7 @@ import os
 import json
 
 sys.path.append(__file__[:-11])
+import err
 
 
 try:  # for check json file before curses init
